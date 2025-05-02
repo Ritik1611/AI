@@ -185,5 +185,59 @@ quantifiers.
     2) Existential Quantifier (∃)
 
 ![alt text](image-20.png)
-![alt text](image-21.png)
+![alt text](image-21.png)  
+
+## Inference in FOL
+### 1) Forward Chaining:
+- For any type of inference there should be a path from start to goal. When based on the available data a decision is taken, then the process is called as the forward chaining.
+- Forward chaining or data-driven inference works from an initial state, and by looking at the premises of the rules (IF-part), perform the actions (THEN-part), possibly updating the knowledge base or working memory. This continues until no more rules can be applied or some cycle limit is met.
+
+Example:
+![alt text](image-22.png)  
+![alt text](image-23.png)  
+
+### 2) Backward Chaining:  
+- If based on the decision the initial data is fetched, then it is called as backward chaining.
+- Backward chaining or goaldriven inference works towards a final state, and by looking at the working memory to see if goal already there. If not look at the actions (THEN-parts) of rules that will establish goal, and set up sub-goals for achieving premises of the rules (IF-part).This continues until some rule can be applied, apply to achieve goal state.  
+![alt text](image-24.png)  
+
+![alt text](image-25.png)  
+
+## Knowledge Engineering in First Order Logic:
+### The Process:
+1) Identify the Task
+2) Assemble the relevant knowledge
+3) Define vocabulary
+4) Encoding of GK about the domain
+5) Encode the problem
+6) Query the KB
+7) Debug the KB
+
+## Unification and Lifting:
+### 1) Unification:  
+The processes of finding legal substitutions that make different logical expressions look identical.  
+![alt text](image-26.png)  
+
+### 2) Lifting
+- The process of encapsulating inference rule is called as Generalized Modus Ponens.
+- Generalized Modus Ponens is a lifted version of Modus Ponens.
+- It raises Modus Ponens from ground (variable-free) propositional logic to first-order logic. Hence it is called as lifting.
+
+## Resolution:
+- Resolution is a valid inference rule.
+- Resolution produces a new clause which is implied by two clauses containing complementary literals.
+- We have seen that a literal is an atomic symbol or a negation of the atomic symbol (i.e.A, ¬A).
+- Resolution is the only interference rule you need, in order to build a sound (soundness means that every sentence produced by a procedure will be “true”) and complete (completeness means every “true” sentence can be produced by a procedure) theorem proof maker.
+
+### Resolution Procedure:  
+![alt text](image-27.png)  
+
+### Conversion from FOL to Clausal Normal Form(CNF):  
+1.  Elimination of implication i.e. Eliminate all ‘->’ : Replace P -> Q with ¬P V Q
+2.  Distribute negations: Replace ¬¬P with P, ¬(PV Q) with ¬P Λ ¬Q and so on.
+3. Eliminate existential quantifiers by replacing with Skolem constants or Skolemfunctions:  
+![alt text](image-28.png)  
+![alt text](image-29.png)  
+![alt text](image-30.png)  
+![alt text](image-31.png)
 </div>
